@@ -1,274 +1,308 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+/*
+* Description: Reset basic CSS style (overwrite user-agent)
+and basic custom classes.
+* Version: 1.0
+* Release: Sept. 2019
+* Description: TBC
+* Author: Richwood
 */
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
+ /******************
+* BASICS
+* Soft reset
+*******************/
+
+
+html,
+body,
+textarea,
+figure,
+label {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+	width: 100%;
+	font-family: 'Droid Serif', 'Slabo', 'Merriweather', 'Georgia', 'Roboto Slab', serif;
+	color: #333;
+	background-color: #FFF;
+	webkit-tap-highlight-color: #222;
+	position: relative;
 	font-size: 100%;
-	font-size: 14px;
-	font: inherit;
-	vertical-align: baseline;
+	/* font-size: 14px; */
 }
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-	display: block;
+ul,
+ol {
+    padding-left: 2em;
 }
-body {
-	line-height: 1;
-	color:#FFF;
+code,
+pre,
+samp {
+    white-space: pre-wrap;
+    font-family: $font-monospace;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+code { line-height: 1em; }
+table { margin-bottom: 1.5em; }
+
+/* avoid top margins on first content element */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top: 0;
 }
 
-body{
-  background: #04140d;
-  font-family: 'Avenir Next', 'Nunito Sans', sans-serif;
-  line-height: 1.4;
-  font-size: 25.5pt;
+/* avoid margins on nested elements */
+li p,
+li ul,
+li ol {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-h2{
-	font-family: 'Avenir Next', 'Nunito Sans', sans-serif;
-	font-size: 3rem;
-	text-transform: uppercase;
-	/* margin-bottom: 4.5rem; */
-	letter-spacing: 0.5rem;
-	font-weight: 500;
+/* HTML5 tags */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
 }
 
-h3{
-	font-family: 'Avenir Next', 'Nunito Sans', sans-serif;
-	font-size: 2.8rem;
-	line-height: 1.3;
-	font-weight: 500;
-	text-transform: uppercase;
-	margin-bottom: 2rem;
-	margin-top: 4.5rem;
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
+    max-width: 100%;
 }
 
-img{
-	max-width: 100%;
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
 }
 
-.tc{text-align:center;}
+/* pictures */
+img {
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+a img { border: 0; }
+
+a {text-decoration: none;color:#000;}
+
+/* scripts */
+body > script {display: none !important;}
+
+/* skip-links */
+.skip-links {
+    position: absolute;
+}
+.skip-links a {
+    position: absolute;
+    left: -9999px;
+    padding: 0.5em;
+    background: #000;
+    color:#fff;
+    text-decoration: none;
+}
+.skip-links a:focus {
+    position: static;
+}
+
+/* *****************
+* SPECIAL
+****************** */
+
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* TRACK */
+::-webkit-scrollbar-track {
+    background-color: #ededed;
+    border-radius: 10px;
+}
+/* HANDLE */
+::-webkit-scrollbar-thumb{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #cbcbcb;
+    border-left: 1px solid #f2f2f2;
+}
+
+/* *****************
+* BASIC
+****************** */
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-title;
+    color: $font-title-color;
+}
+
+h1{
+	font-family: 'Ubuntu', 'Open Sans', 'Segoe UI', 'Helvetica Neue', 'Droid Sans Serif', 'Roboto', Arial, sans-serif;
+}
+
+h2{}
+
+h3{}
+
+.btn {
+  border: 1px solid transparent;
+  padding: 10px;
+  margin:10px;
+}
+
+/* *****************
+* PERSONAL CLASSES
+****************** */
+
+.mt-30{margin-top:2rem;}
+.mt-60{margin-top:4rem;}
+
 .tl{text-align:left;}
+.tc{text-align:center;}
 .tr{text-align:right;}
 
-.mt-30{margin-top:3rem;}
-.mt-50{margin-top:5rem;}
-
-.black-color{color:#000}
-
-.text-intro{
-	margin-top: 9rem;
-	font-size: 2rem;
-	letter-spacing: 0.08rem;
-}
-.text-intro p{
-	margin-bottom: 2.2rem;
-	line-height: 1.6;
-	font-weight: 500;
-}
-.long-text{
-  font-size: 1rem;
-}
-.long-text p{
-	line-height: 1.7;
+.wide-space {
+    letter-spacing: 1.6px;
 }
 
-section.key-players{
-	margin-top: 16rem;
+.white-space{padding-top:30px;}
+
+.icon-lg {
+    font-size: 50px;
+    line-height: 18px;
 }
 
-section.intro .text-intro{
-	margin-top: 12rem;
+.bg-primary {
+    background-color: $main-color;
 }
 
-.block-film{
-	padding-bottom: 130px;
-	padding-top: 130px;
+.bg-dark {
+    color: $lightGrey;
+    background-color: $darkGrey;
 }
 
-.spitfire{
-	background-color: #04140d;
-}
-.ATD{
-	background-color:#FFF;	
-}
-.nureyev{}
-
-.film-poster{
-	max-width: 800px;
-	width: 80%;
-	max-height: 70rem;
+.text-faded {
+    /* color: rgba(245,245,245,0.7); */
+    color: #333;
 }
 
-.moon{}
-.moon .text-intro{
-	margin-top:35rem;
-}
-.moon{
-	background: #000 url(../img/moon_image.webp) 100% 20% / auto no-repeat;
-}
-.no-webp .moon{
-	background: transparent url(../img/moon_image.jpg) 100% 20% / auto no-repeat;
+.text-dark {
+    color: #111;
 }
 
-.film-block{
-	margin-top: 24rem;
+.text-primary {
+    color: #080854;
+    margin-bottom:37px;
+    text-transform: uppercase;
+    margin-top:10px;
 }
 
-img.tbf_logo {
-    max-width: 285px;
-    width: 80%;
-    margin: 12rem auto 9rem;
-}
-img.tbf_tagline {
-    width: 100%;
-    max-width: 1140px;
-    margin: 0rem auto;
+.modal-content {
+    background-color: #1d1d1d;
 }
 
-.player{
-  width:100%;
-  max-width: 670px;
-  height: 375px;
-  padding-top: 12rem;
-  margin: 0 0 0 auto;
-  background: #1d1d1b url(../img/play_icon.svg) 50% 50% / auto no-repeat;
+.margin-top-0 {
+    margin-top: 0;
 }
 
-.playerTBFParent{
-	text-align: left;
+.margin-top-large{
+    margin-top:30px;
 }
 
-img.playerTBF{
-	max-width: 7rem;
+.no-gutter > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
 }
 
-section.films{
-	margin-top: 13rem;
+/* *****************
+* NAVIGATION
+****************** */
+
+nav {
+  ul {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
 }
 
-.film_title{
-	margin-bottom: 7rem;
-	max-width:100%;
+/* *****************
+* MODERNIZR
+****************** */
+
+.no-backgroundblendmode{}
+.no-backgroundsize{}
+.no-bgpositionxy{}
+.no-bgrepeatspace_bgrepeatround-bgsizecover{}
+.no-cssanimations{}
+.no-cssgradients{}
+.no-csstransforms{}
+.no-csstransitions{}
+.no-es5{}
+.no-flexbox{}
+.no-multiplebgs{}
+.no-opacity{}
+.no-rgba{}
+.no-svg{}
+.no-video{}
+.no-webp{}
+
+/* *****************
+* MEDIA QUERIES
+****************** */
+
+/*==========  Mobile First DESIGN  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
 }
 
-.flex-container{
-	display:flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
 }
 
-.around{
-  justify-content:space-around;
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
 }
 
-.flex-item{
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
 }
 
-.links .flex-item{
-    flex-basis: 30%;
-    border-right: 1px solid #000;
-}
-.links .flex-item:last-child{
-	border: 0;
-	/* flex-grow: 1; */
-}
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
 
-footer{
-	background-color: #FFF;
-	color: #000;
-	padding: 1.5rem 0 2rem;
-}
-.contact{
-	font-size: 2rem;
-	margin-top: 1rem;
-}
-.links{
-	color: #030303;
-	font-size: 1.2rem;
-	padding: 0 0 1rem;
-	margin: 1.4rem auto;
-}
-footer a{
-	color: #030303;
-	text-decoration: none;
-}
-.links > div{
-	position: relative;
-}
-
-
-.footer-social-icon{
-	width: 2.5rem;
-}
-
-.flex-container.links {}
-
-@media all and (min-width:748px){
-	.playerTBFParent{
-			text-align: right;
-		}
-}
-
-@media all and (max-width:1140px){
-	.text-intro{
-    	font-size: 1.3rem;
-	}
-	img.tbf_logo{
-		width:40%;
-		margin: 3rem auto 1rem;
-	}
-
-	section.intro .text-intro {
-		margin-top: 4rem;
-	}
-	section.key-players{
-		margin-top:4rem;
-	}
-	section.films{
-		margin-top:4rem;
-	}
-	.block-film {
-		padding-bottom: 4rem;
-		padding-top: 4rem;
-	}
-	.contact{
-		font-size:1.65rem;
-	}
-	.links{
-		font-size:.8rem;
-	}
 }
