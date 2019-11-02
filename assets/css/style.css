@@ -30,6 +30,11 @@ html,body{
 	position: relative;
 	font-size: 100%;
 	/* font-size: 14px; */
+	
+	/* Trick to enable hardware acceleration */
+	-webkit-transform: translateZ(0); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+        -ms-transform: translateZ(0); /* IE 9 */
+        transform: translateZ(0); /* IE 10, Fx 16+, Op 12.1+ */
 }
 ul,
 ol {
