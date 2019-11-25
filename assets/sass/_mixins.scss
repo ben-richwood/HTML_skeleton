@@ -1,0 +1,67 @@
+@mixin displayFlex($jc: center, $ai: center)
+{
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	-webkit-justify-content: $jc; /* Safari 6.1+ */
+	justify-content: $jc;
+
+	-webkit-align-items: $ai; /* Safari 7.0+ */
+	align-items: $ai;
+}
+
+/*
+* usage: @include displayFlex(flex-end, center);
+*/
+
+@mixin customTransform($value) {
+    -ms-transform: $value; /* IE 9 */
+    -moz-transform: $value;
+    -o-transform: $value;
+    -webkit-transform: $value; /* Chrome, Safari, Opera */
+    transform: $value;
+}
+/*
+* usage: @include customTransform(translate(0, -50%));
+*/
+
+/*
+* FLUID TYPOGRAPHY
+*/
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}
+
+/*
+* USGAE:
+$min_width: 320px;
+$max_width: 1200px;
+$min_font: 16px;
+$max_font: 24px;
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+*/
