@@ -1,7 +1,8 @@
 var gulp = require('gulp')
-		sass = require('gulp-sass'),
-		concat = require('gulp-concat'),
-		bust = require('gulp-buster');
+	sass = require('gulp-sass'),
+	concat = require('gulp-concat'),
+	bust = require('gulp-buster'),
+	sourcemaps = require('gulp-sourcemaps');
 
 		// gutil = require( 'gulp-util' );
 
@@ -21,9 +22,12 @@ gulp.task('bust', function () {
 // SASS compiler
 gulp.task('sass', function () {
   return gulp.src('./assets/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./assets/css'));
+	.pipe(sourcemaps.init())
+	.pipe(sass().on('error', sass.logError))
+	.pipe(sourcemaps.write('./maps'))
+	.pipe(gulp.dest('./assets/css'));
 });
+
 
 gulp.task('concat', function() {
   return gulp.src(['./assets/css/bootstrap.css', './assets/css/style.css', './assets/css/watchdogs.css'])
