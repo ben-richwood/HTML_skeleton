@@ -21,7 +21,6 @@ and basic custom classes.
   font-weight: 300;
   src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
 }
-
 /*
 * USAGE: font-family: "system";
 */
@@ -145,7 +144,7 @@ body > script {display: none !important;}
     color: #fff;
     background: #222;
 }
-
+/* highlight color when selecting text */
 ::selection {
     text-shadow: none;
     color: #fff;
@@ -189,6 +188,14 @@ h3{}
   padding: 10px;
   margin:10px;
 }
+
+.no-highlighting{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+/* ideal for buttons */
 
 /* *****************
 * PERSONAL CLASSES
@@ -253,6 +260,14 @@ h3{}
     padding-right: 0;
     padding-left: 0;
 }
+
+/* if we want the our font size in a range where 14px is the minimum size
+at the smallest viewport width of 300px and where 26px is the maximum size
+at the largest viewport width of 1600px */
+.fluid-typo{
+	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+/* Check the SASS mixins for better config */
 
 /* *****************
 * NAVIGATION
