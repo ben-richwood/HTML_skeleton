@@ -43,11 +43,11 @@ html,body{
 	position: relative;
 	font-size: 100%;
 	/* font-size: 14px; */
-	
+
 	/* Trick to enable hardware acceleration */
 	-webkit-transform: translateZ(0); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
-        -ms-transform: translateZ(0); /* IE 9 */
-        transform: translateZ(0); /* IE 10, Fx 16+, Op 12.1+ */
+	-ms-transform: translateZ(0); /* IE 9 */
+	transform: translateZ(0); /* IE 10, Fx 16+, Op 12.1+ */
 }
 ul,
 ol {
@@ -115,6 +115,16 @@ img {
 a img { border: 0; }
 
 a {text-decoration: none;color:#000;}
+
+a:visited{color: blue;}
+
+button{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	cursor: pointer;
+}
 
 /* scripts */
 body > script {display: none !important;}
@@ -184,9 +194,49 @@ h2{}
 h3{}
 
 .btn {
-  border: 1px solid transparent;
-  padding: 10px;
-  margin:10px;
+	border: 1px solid transparent;
+	padding: 10px;
+	margin:10px;
+	font-size: 0.9285714286rem;
+	line-height: 1.4;
+	min-height: 2.2rem;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale;
+	display: -ms-inline-flexbox;
+	display: -webkit-inline-box;
+	display: inline-flex;
+	-ms-flex-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 4px;
+	padding: 0.3rem 1.1rem;
+	font-weight: 600;
+	white-space: nowrap;
+	cursor: pointer;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	background-clip: border-box !important;
+	background-origin: border-box !important;
+	background-origin: padding-box;
+	background-clip: border-box;
+	
+	-o-transition: background-color .2s ease, border-color .2s ease, -o-filter .2s ease;
+	-ms-transition: background-color .2s ease, border-color .2s ease, -ms-filter .2s ease;
+	-webkit-transition: background-color .2s ease,border-color .2s ease,-webkit-filter .2s ease;
+	transition: filter .2s ease,background-color .2s ease,border-color .2s ease, filter .2s ease;
+}
+
+.btn:hover, .btn:focus {
+	background: transparent;
+	color: #bc1621;
+	border: 1px solid #bc1621;
+	transition: background-color .2s ease, border-color .2s ease, -webkit-filter .2s ease;
 }
 
 .no-highlighting{
@@ -259,6 +309,30 @@ h3{}
 .no-gutter > [class*=col-] {
     padding-right: 0;
     padding-left: 0;
+}
+
+.disabled {
+	color: #777 !important;
+	cursor: not-allowed;
+	border: 2px solid #bbb !important;
+	background: #e3e3e3 !important;
+}
+
+.soft-warning {
+	display: block;
+	padding-left: 2rem;
+	border: 0;
+	position: relative;
+	box-sizing: content-box;
+}
+.soft-warning:before{
+	background: #bc1621;
+	top: 0px;
+	content: "";
+	left: 0rem;
+	position: absolute;
+	width: 2px;
+	height: 100%;
 }
 
 /* if we want the our font size in a range where 14px is the minimum size
