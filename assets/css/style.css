@@ -414,3 +414,16 @@ nav {
 @media only screen and (min-width : 1200px) {
 
 }
+
+/* Print URL After Links */
+@media print{
+  a:after{content:" (" attr(href) ") ";font-size:0.8em;font-weight:normal;}
+  a[href$=".pdf"]:after { content: " (" attr(href) ")(PDF) ";font-size:0.8em;font-weight:normal;}
+}
+
+  /* ////////////////////////////////////////////////////////
+ // Adding "(PDF)" after links that head to a pdf file
+///////////////////////////////////////////////////// */
+
+/* If file size specified as data attribute, use that too */
+a[href$=".pdf"][data-size]:after { content: " (PDF, " attr(data-size) ")"; }
