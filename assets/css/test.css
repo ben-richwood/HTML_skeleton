@@ -1,0 +1,125 @@
+
+  /*////////////////////////////////////////////////////////
+ // (Forcing Breaks, Hyphenation, Ellipsis, etc)
+/////////////////////////////////////////////////////*/
+
+/*Language-specific*/
+:lang(af){quotes:'\201E' '\201D' '\201A' '\2019';}
+:lang(ak){font-family:Lucida,"DejaVu Sans",inherit;}
+:lang(ar){font-family:Tahoma 12,Nazli,KacstOne,"DejaVu Sans",inherit;}
+:lang(bg){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(bn){font-family:FreeSans,MuktiNarrow,Vrinda,inherit;font-size:1.1em;line-height:1.4em;}
+:lang(cs){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(da){quotes:'\00BB' '\00AB' '\203A' '\2039';}
+:lang(de){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(el){font-family:"DejaVu Sans",inherit;quotes:'\00AB' '\00BB' '\2039' '\203A';}
+:lang(en-GB){quotes:'\2018' '\2019' '\201C' '\201D';}
+:lang(es){quotes:'\00AB' '\00BB' '\2039' '\203A';}
+:lang(fa){font-family:Terafik,Traffic,Roya,Nazli,Nazanin,sans;font-size:1.5em;}
+:lang(fi){quotes:'\201D' '\201D' '\2019' '\2019';}
+:lang(fr){quotes:'\ab\2005' '\2005\bb' '\2039\2005' '\2005\203a';}
+:lang(hr){quotes:'\00BB' '\00AB' '\203A' '\2039';}
+:lang(is){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(ja){font-size:1.1em;}
+:lang(km){font-family:"Khmer OS System","Khmer OS","Khmer Kampongtrach","CDT Khmer",inherit;line-height:2em;}
+:lang(ko){font-size:1.1em;}
+:lang(lt){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(nl){quotes:'\201E' '\201D' '\201A' '\2019';}
+:lang(pl){quotes:'\201E' '\201D' '\201A' '\2019';}
+:lang(ro){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(sk){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(sq){quotes:'\00AB' '\00BB' '\2039' '\203A';}
+:lang(sr){quotes:'\201E' '\201C' '\201A' '\2018';}
+:lang(sv){quotes:'\201D' '\201D' '\2019' '\2019';}
+:lang(tr){quotes:'\00AB' '\00BB' '\2039' '\203A';}
+:lang(vi){font-family:"Lucida Grande","Vu Phu Tho","DejaVu Sans",inherit;}
+       :lang(vi) a:hover,:lang(vi) a:active{text-decoration:none;color:#606047;}
+:lang(zh){font-size:1.5em;}
+
+  /*////////////////////////////////////////////////////////
+ // Common Unicode Icons
+/////////////////////////////////////////////////////*/
+
+a[href^="mailto:"]:before { content: "\2709"; }
+.phone:before             { content: "\2706"; }
+.important:before         { content: "\27BD"; }
+blockquote:before         { content: "\275D"; }
+blockquote:after          { content: "\275E"; }
+/* .alert:before             { content: "\26A0"; } */
+
+  /*////////////////////////////////////////////////////////
+ // CSS Diagnostics
+/////////////////////////////////////////////////////*/
+/* Empty Elements */
+div:empty:not([class^="imageSlider"]), span:empty, li:empty, p:empty, td:empty, th:empty
+{ padding: 20px; border: 5px dotted yellow !important; }
+
+/* Empty Attributes */
+*[alt=""], *[title=""], *[class=""], *[id=""], a[href=""], a[href="#"]
+{ border: 5px solid yellow !important; }
+
+/* Deprecated Elements */
+applet, basefont, center, dir, font, isindex, menu, s, strike, u
+{ border: 5px dotted red !important; }
+
+/* Deprecated Attributes */
+*[background], *[bgcolor], *[clear], *[color], *[compact], *[noshade], *[nowrap], *[size], *[start],
+*[bottommargin], *[leftmargin], *[rightmargin], *[topmargin], *[marginheight], *[marginwidth], *[alink], *[link], *[text], *[vlink],
+*[align], *[valign],
+*[hspace], *[vspace],
+*[height], *[width],
+ul[type], ol[type], li[type]
+{ border: 5px solid red !important; }
+
+/* Proposed Deprecated Elements */
+input[type="button"], big, tt
+{ border: 5px dotted #33FF00 !important; }
+
+/* Proposed Deprecated Attributes */
+/* *[border], a[target], table[cellpadding], table[cellspacing], *[name]
+{ border: 5px solid #33FF00 !important; } */
+
+*[style], font, center {outline: 5px solid red;}
+*[class=""], *[id=""] {outline: 5px dotted red;}
+
+img[alt=""] {border: 3px dotted red;}
+img:not([alt]) {border: 5px solid red;}
+img[title=""] {outline: 3px dotted fuchsia;}
+img:not([title]) {outline: 5px solid fuchsia;}
+
+table:not([summary]) {outline: 5px solid red;}
+table[summary=""] {outline: 3px dotted red;}
+th {border: 2px solid red;}
+th[scope="col"], th[scope="row"] {border: none;}
+
+a[href]:not([title]) {border: 5px solid red;}
+a[title=""] {outline: 3px dotted red;}
+a[href="#"] {background: lime;}
+a[href=""] {background: fuchsia;}
+
+  /*////////////////////////////////////////////////////////
+ // Style Links Depending on Destination
+/////////////////////////////////////////////////////*/
+a[href^="http://"] {
+        /* fully valid URL, likely external link */
+}
+
+a[href="http://google.com"] {
+        /* link to specific website */
+}
+
+a[href^="/"], a[href^=".."] {
+        /* internal relative link */
+}
+
+a[href^="mailto:"] {
+        /* email link */
+}
+
+a[href$=".pdf"] {
+        /* PDF file */
+}
+
+a[href$=".zip"] {
+        /* Archive file */
+}
