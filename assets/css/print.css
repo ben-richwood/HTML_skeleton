@@ -1,0 +1,34 @@
+@media print{
+
+  header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+    display:none;
+  }
+  
+  body{
+    font-size: 12px;
+  }
+  
+  h1, h2, h3, h4 {
+    break-before: always;
+    word-break: break-word;
+  }
+  
+  a {
+    word-break: break-word;
+  }
+  
+  table, img, svg {
+    break-inside: avoid;
+  }
+
+  /* Print URL After Links */
+  a:after{content:" (" attr(href) ") ";font-size:0.8em;font-weight:normal;}
+  a[href$=".pdf"]:after { content: " (" attr(href) ")(PDF) ";font-size:0.8em;font-weight:normal;}
+  
+    /* ////////////////////////////////////////////////////////
+   // Adding "(PDF)" after links that head to a pdf file
+  ///////////////////////////////////////////////////// */
+  /* If file size specified as data attribute, use that too */
+  a[href$=".pdf"][data-size]:after { content: " (PDF, " attr(data-size) ")"; }
+}
+
