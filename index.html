@@ -26,12 +26,20 @@
 
     <!-- STYLE
     ================================= -->
-    <link rel=stylesheet type=text/css href="./assets/css/compiled.css">
+    <link rel="preload" href="./assets/css/compiled.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./assets/css/compiled.css"></noscript>
     <!-- <link rel=stylesheet type=text/css href="./assets/css/style.css"> -->
     <!-- <link rel=stylesheet type=text/css href="./assets/css/bootstrap-grid.css"> -->
     <link rel="preload" href="../assets/js/modernizr-custom.js" as="script">
 
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    
+    <style type="text/css">
+      /* CRITICAL STYLE (First Contentful Paint): classes that the browser needs to render the visible content */
+      body, html {margin: 0;padding: 0;min-height:100vh;}
+      .container {padding: 0 18px;display: none;background-color: white;overflow: hidden;}
+      h1 {word-spacing: 5px;color: blue;font-weight: bold;text-align: center;}
+    </style>
 
   </head>
   <body>
