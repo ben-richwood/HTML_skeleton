@@ -1,0 +1,427 @@
+/*
+* Description: Reset basic CSS style (overwrite user-agent)
+and basic custom classes.
+* Version: 1.0
+* Release: Sept. 2019
+* Description: TBC
+* Author: Richwood
+*/
+
+ /******************
+* BASICS
+* Soft reset
+*******************/
+
+/* System Font Stack
+* https://css-tricks.com/snippets/css/system-font-stack/
+*/
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+// USAGE: font-family: "system";
+
+
+html,
+body,
+textarea,
+figure,
+label {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+	width: 100%;
+	font-family: 'Droid Serif', 'Slabo', 'Merriweather', 'Georgia', 'Roboto Slab', serif;
+	color: #333;
+	background-color: #FFF;
+	webkit-tap-highlight-color: #222;
+	position: relative;
+	font-size: 100%;
+	/* font-size: 14px; */
+
+	/* Trick to enable hardware acceleration */
+	-webkit-transform: translateZ(0); /* Ch <36, Saf 5.1+, iOS < 9.2, An =<4.4.4 */
+	-ms-transform: translateZ(0); /* IE 9 */
+	transform: translateZ(0); /* IE 10, Fx 16+, Op 12.1+ */
+}
+ul,
+ol {
+    padding-left: 2em;
+}
+code,
+pre,
+samp {
+    white-space: pre-wrap;
+    font-family: $font-monospace;
+}
+code { line-height: 1em; }
+table { margin-bottom: 1.5em; }
+
+/* avoid top margins on first content element */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top: 0;
+}
+
+/* avoid margins on nested elements */
+li p,
+li ul,
+li ol {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* HTML5 tags */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+    display: block;
+}
+
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
+    max-width: 100%;
+}
+
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+
+/* pictures */
+img {
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+}
+a img { border: 0; }
+
+a {text-decoration: none;color:#000;}
+
+a:visited{color: blue;}
+
+button{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	cursor: pointer;
+}
+
+/* scripts */
+body > script {display: none !important;}
+
+/* skip-links */
+.skip-links {
+    position: absolute;
+}
+.skip-links a {
+    position: absolute;
+    left: -9999px;
+    padding: 0.5em;
+    background: #000;
+    color:#fff;
+    text-decoration: none;
+}
+.skip-links a:focus {
+    position: static;
+}
+
+/* *****************
+* SPECIAL
+****************** */
+
+::-moz-selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+/* highlight color when selecting text */
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background: #222;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* TRACK */
+::-webkit-scrollbar-track {
+    background-color: #ededed;
+    border-radius: 10px;
+}
+/* HANDLE */
+::-webkit-scrollbar-thumb{
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #cbcbcb;
+    border-left: 1px solid #f2f2f2;
+}
+
+/* *****************
+* BASIC
+****************** */
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: $font-title;
+    color: $font-title-color;
+}
+
+h1{
+	font-family: 'Ubuntu', 'Open Sans', 'Segoe UI', 'Helvetica Neue', 'Droid Sans Serif', 'Roboto', Arial, sans-serif;
+}
+
+h2{}
+
+h3{}
+
+.btn {
+	border: 1px solid transparent;
+	padding: 10px;
+	margin:10px;
+	font-size: 0.9285714286rem;
+	line-height: 1.4;
+	min-height: 2.2rem;
+	-webkit-font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale;
+	display: -ms-inline-flexbox;
+	display: -webkit-inline-box;
+	display: inline-flex;
+	-ms-flex-align: center;
+	-webkit-box-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	text-align: center;
+	border-radius: 4px;
+	padding: 0.3rem 1.1rem;
+	font-weight: 600;
+	white-space: nowrap;
+	cursor: pointer;
+	text-decoration: none;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	background-clip: border-box !important;
+	background-origin: border-box !important;
+	background-origin: padding-box;
+	background-clip: border-box;
+
+	-o-transition: background-color .2s ease, border-color .2s ease, -o-filter .2s ease;
+	-ms-transition: background-color .2s ease, border-color .2s ease, -ms-filter .2s ease;
+	-webkit-transition: background-color .2s ease,border-color .2s ease,-webkit-filter .2s ease;
+	transition: filter .2s ease,background-color .2s ease,border-color .2s ease, filter .2s ease;
+}
+
+.btn:hover, .btn:focus {
+	background: transparent;
+	color: #bc1621;
+	border: 1px solid #bc1621;
+	transition: background-color .2s ease, border-color .2s ease, -webkit-filter .2s ease;
+}
+
+.no-highlighting{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+/* ideal for buttons */
+
+/* *****************
+* PERSONAL CLASSES
+****************** */
+
+.mt-30{margin-top:2rem;}
+.mt-60{margin-top:4rem;}
+
+.tl{text-align:left;}
+.tc{text-align:center;}
+.tr{text-align:right;}
+
+.wide-space {
+    letter-spacing: 1.6px;
+}
+
+.white-space{padding-top:30px;}
+
+.icon-lg {
+    font-size: 50px;
+    line-height: 18px;
+}
+
+.bg-primary {
+    background-color: $main-color;
+}
+
+.bg-dark {
+    color: $lightGrey;
+    background-color: $darkGrey;
+}
+
+.text-faded {
+    /* color: rgba(245,245,245,0.7); */
+    color: #333;
+}
+
+.text-dark {
+    color: #111;
+}
+
+.text-primary {
+    color: #080854;
+    margin-bottom:37px;
+    text-transform: uppercase;
+    margin-top:10px;
+}
+
+.modal-content {
+    background-color: #1d1d1d;
+}
+
+.margin-top-0 {
+    margin-top: 0;
+}
+
+.margin-top-large{
+    margin-top:30px;
+}
+
+.no-gutter > [class*=col-] {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.disabled {
+	color: #777 !important;
+	cursor: not-allowed;
+	border: 2px solid #bbb !important;
+	background: #e3e3e3 !important;
+}
+
+.soft-warning {
+	display: block;
+	padding-left: 2rem;
+	border: 0;
+	position: relative;
+	box-sizing: content-box;
+}
+.soft-warning:before{
+	background: #bc1621;
+	top: 0px;
+	content: "";
+	left: 0rem;
+	position: absolute;
+	width: 2px;
+	height: 100%;
+}
+
+/* if we want the our font size in a range where 14px is the minimum size
+at the smallest viewport width of 300px and where 26px is the maximum size
+at the largest viewport width of 1600px */
+.fluid-typo{
+	font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+}
+/* Check the SASS mixins for better config */
+
+/* *****************
+* NAVIGATION
+****************** */
+
+nav {
+  ul {
+    margin-left: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+
+/* *****************
+* MODERNIZR
+****************** */
+
+.no-backgroundblendmode{}
+.no-backgroundsize{}
+.no-bgpositionxy{}
+.no-bgrepeatspace_bgrepeatround-bgsizecover{}
+.no-cssanimations{}
+.no-cssgradients{}
+.no-csstransforms{}
+.no-csstransitions{}
+.no-es5{}
+.no-flexbox{}
+.no-multiplebgs{}
+.no-opacity{}
+.no-rgba{}
+.no-svg{}
+.no-video{}
+.no-webp{}
+
+/* *****************
+* MEDIA QUERIES
+****************** */
+
+/*==========  Mobile First DESIGN  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}
+
+/* Print URL After Links */
+@media print{
+  a:after{content:" (" attr(href) ") ";font-size:0.8em;font-weight:normal;}
+  a[href$=".pdf"]:after { content: " (" attr(href) ")(PDF) ";font-size:0.8em;font-weight:normal;}
+}
+
+  /* ////////////////////////////////////////////////////////
+ // Adding "(PDF)" after links that head to a pdf file
+///////////////////////////////////////////////////// */
+
+/* If file size specified as data attribute, use that too */
+a[href$=".pdf"][data-size]:after { content: " (PDF, " attr(data-size) ")"; }

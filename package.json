@@ -4,7 +4,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build-css": "node-sass --include-path scss assets/scss/main.scss dist/assets/css/main.css",
-    "watch-css": "nodemon -e scss -x \"npm run build-css\""
+    "watch-css": "nodemon -e scss -x \"npm run build-css\"",
+    "dev": "webpack --mode=development",
+    "prod": "webpack --mode=production"
   },
   "keywords": [
     …
@@ -12,8 +14,10 @@
   "dependencies": {},
   "devDependencies": {
     "node-sass": "^4.13.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "nodemon": "^1.19.4",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "webpack-modernizr-loader": "^5.0.0"
   }
 }

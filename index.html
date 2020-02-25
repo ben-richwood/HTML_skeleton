@@ -12,7 +12,7 @@
     <!-- MANIFEST PWA
     ================================= -->
     <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color" content="#176a39">
+    <meta name="theme-color" content="#29abe2">
 
     <!-- FLAVICON
     ================================= -->
@@ -26,14 +26,12 @@
 
     <!-- STYLE
     ================================= -->
+    <!-- Load the Critical CSS first (First Contentful Paint) in <style>, and then rest with rel="preload" -->
     <link rel="preload" href="./assets/css/compiled.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="./assets/css/compiled.css"></noscript>
-    <!-- <link rel=stylesheet type=text/css href="./assets/css/style.css"> -->
-    <!-- <link rel=stylesheet type=text/css href="./assets/css/bootstrap-grid.css"> -->
-    <link rel="preload" href="../assets/js/modernizr-custom.js" as="script">
 
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
-    
+
     <style type="text/css">
       /* CRITICAL STYLE (First Contentful Paint): classes that the browser needs to render the visible content */
       body, html {margin: 0;padding: 0;min-height:100vh;}
@@ -47,8 +45,14 @@
       <nav></nav>
     </header>
 
-    <section></section>
-
+    <section>
+      <picture>
+        <source type="image/webp" srcset="./pages/foo.webp">
+        <source type="image/jp2" srcset="./pages/foo.jp2">
+        <source type="image/jpg" srcset="./img/pics/foo.jpg">
+        <img src="./img/foo.jpg" alt="Img 1" title="foo image">
+      </picture>
+    </section>
     <footer></footer>
     <script src="./assets/js/modernizr-custom.js" defer></script>
   </body>

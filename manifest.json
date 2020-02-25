@@ -4,7 +4,7 @@
   "start_url": "./index.html?source=pwa",
   "display": "standalone",
   "background_color": "#202B33",
-	"theme_color": "#202B33",
+	"theme_color": "#29abe2",
   "description": "TBC",
 	"scope": "./",
 	"orientation": "portrait",
