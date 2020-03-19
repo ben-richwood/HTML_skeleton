@@ -65,3 +65,32 @@ html {
   @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 */
+
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+  // For Google Chrome
+  &::-webkit-scrollbar {
+    width:  $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  & {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+/*
+* USGAE:
+* .custom-area {
+*   @include scrollbars(.5em, slategray);
+* }
+*/

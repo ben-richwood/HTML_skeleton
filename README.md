@@ -17,3 +17,8 @@ Lisenced under MIT.
 - grunt file
 - gulp file
 - webpack ^4.1
+
+### To add
+
+[Imagemin](https://web.dev/use-imagemin-to-compress-images/)
+[NPM page](https://www.npmjs.com/package/imagemin-webp)
